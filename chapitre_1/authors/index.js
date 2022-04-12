@@ -34,17 +34,17 @@ var authors = [
 ]
 
 app.get('/authors/:id', (req, res) => {
-    const x = req.params.id 
+    const x = req.params.id - 1
     res.send(`${authors[x].name} , ${authors[x].nationality}`);
 });
 
 app.get('/authors/:id/books', (req, res) => {
-    const x = req.params.id 
+    const x = req.params.id - 1
     res.send(`${authors[x].books}`);
 });
 
 app.get('/json/authors/:id', (req, res) => {
-    const x = req.params.id 
+    const x = req.params.id - 1
     res.json({
         name: authors[x].name,
         nationality: authors[x].nationality
